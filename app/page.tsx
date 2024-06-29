@@ -1,113 +1,140 @@
+"use client";
+import { useState } from "react";
+import PersonalInfo from "../components/PersonalInfo/PersonalInfo";
+import VacationInfo from "../components/VacationInfo/VacationInfo";
+import { useUser } from "../context/UserContext";
 import Image from "next/image";
+import EmployeeLoad from "../components/EmployeeLoad/EmployeeLoad";
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState("personalInfo");
+  const { user } = useUser();
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <div className="container mx-auto min-h-screen  text-primary-text font-sans">
+      <header className="py-6 flex items-center justify-between max-sm:px-4">
+        <Image src="/Logo.svg" alt="Logo" width={180} height={40} />
+        <div className="flex items-center">
+          <div className="relative">
+            <button
+              onClick={() => setDropdownOpen(!isDropdownOpen)}
+              className="flex items-center border border-primary-border rounded-[18px] px-4 py-[6px]"
+            >
+              <Image
+                src={user.avatar}
+                width={24}
+                height={24}
+                alt="avatar"
+                className="w-6 h-6 rounded-full"
+              />
+              <Image
+                src="/chevron-down.svg"
+                alt="arrow"
+                width={24}
+                height={24}
+              />
+            </button>
+            {isDropdownOpen && (
+              <div className="absolute right-0 mt-2 w-48 bg-secondary-bg rounded-lg shadow-lg">
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-primary-text hover:bg-tertiary-bg"
+                >
+                  Profile
+                </a>
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-primary-text hover:bg-tertiary-bg"
+                >
+                  Settings
+                </a>
+                <a
+                  href="#"
+                  className="block px-4 py-2 text-primary-text hover:bg-tertiary-bg"
+                >
+                  Logout
+                </a>
+              </div>
+            )}
+          </div>
+          <button className="ml-2">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
+              className="ml-2"
+              src="/burger.svg"
+              alt="burger"
+              width={24}
               height={24}
-              priority
             />
-          </a>
+          </button>
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
+      </header>
+      <button className="flex justify-center items-center my-4 px-4 py-[10px]">
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          className="mr-4"
+          src="/chevron-left.svg"
+          alt="burger"
+          width={24}
+          height={24}
         />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <p className="text-button font-semiBold text-tertiary-text uppercase">
+          Вернуться к сотрудникам
+        </p>
+      </button>
+      <main className="">
+        <div className="px-10 pt-10 pb-10 mb-5 rounded-xl bg-secondary-bg  max-sm:px-5">
+          <div className="flex flex-wrap max-md:justify-center max-md:items-center">
+            <Image
+              src={user.avatar}
+              width={160}
+              height={160}
+              alt="avatar"
+              className="w-40 h-40 rounded-full mr-4"
+            />
+            <div className="py-6 px-12 max-md:py-0 max-md:px-0 max-md:pt-4">
+              <h3 className="text-h3 font-bold max-md:text-h5 max-md:text-center">
+                {user.firstName}
+                <br />
+                {user.lastName} {user.middleName}
+              </h3>
+              <div className="mt-8 flex flex-col max-md:text-center">
+                <p className="mb-4 text-body1 font-regular">{user.position}</p>
+                <p className="text-body1 font-regular">{user.location}</p>
+              </div>
+            </div>
+          </div>
+          <div className="max-w-fit mt-6 flex flex-nowrap border-b border-primary-border max-md:justify-center">
+            <button
+              onClick={() => setActiveTab("personalInfo")}
+              className={`px-4 py-[10px] text-body2 font-semibold uppercase ${
+                activeTab === "personalInfo"
+                  ? "text-primary-text border-b-2 border-accent-border"
+                  : "text-secondary-text"
+              }`}
+            >
+              Основная информация
+            </button>
+            <button
+              onClick={() => setActiveTab("vacationInfo")}
+              className={`px-4 py-[10px] text-body2 font-semibold uppercase ${
+                activeTab === "vacationInfo"
+                  ? "text-primary-text border-b-2 border-accent-border"
+                  : "text-secondary-text"
+              }`}
+            >
+              Отпуск
+            </button>
+          </div>
+        </div>
+        {activeTab === "personalInfo" ? (
+          <div className="flex justify-between max-lg:flex-wrap">
+            <PersonalInfo />
+            <EmployeeLoad />
+          </div>
+        ) : (
+          <VacationInfo />
+        )}
+      </main>
+    </div>
   );
 }
