@@ -16,7 +16,7 @@ export default function PersonalInfo() {
   };
 
   return (
-    <div className="p-[30px] max-w-[820px] bg-secondary-bg rounded-xl ">
+    <div className="p-[30px] max-w-[820px] h-fit bg-secondary-bg rounded-xl ">
       <div className="flex justify-between items-center">
         <h5 className="text-h5 font-regular">Персональная информация</h5>
         <button
@@ -32,22 +32,22 @@ export default function PersonalInfo() {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L7 5.58579L12.2929 0.292893C12.6834 -0.0976311 13.3166 -0.0976311 13.7071 0.292893C14.0976 0.683417 14.0976 1.31658 13.7071 1.70711L8.41421 7L13.7071 12.2929C14.0976 12.6834 14.0976 13.3166 13.7071 13.7071C13.3166 14.0976 12.6834 14.0976 12.2929 13.7071L7 8.41421L1.70711 13.7071C1.31658 14.0976 0.683417 14.0976 0.292893 13.7071C-0.0976311 13.3166 -0.0976311 12.6834 0.292893 12.2929L5.58579 7L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893Z"
                 fill="#B0B1B6"
               />
             </svg>
           ) : (
-            "Изменить"
+            <p className="text-subtitle2 text-tertiary-text font-medium">Изменить</p>
           )}
         </button>
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="grid grid-cols-1 md:grid-cols-2 gap-1 mt-6 gap-x-6"
+        className="grid grid-cols-1 md:grid-cols-2 mt-[18px] gap-x-6"
       >
-        <div className="w-[368px] max-md:w-[328px]">
+        <div className="w-[368px] max-md:w-full">
           <label className="relative left-2 -bottom-[11px] p-1 bg-secondary-bg text-secondary-text text-caption font-regular">
             Имя
           </label>
@@ -64,7 +64,7 @@ export default function PersonalInfo() {
             )}
           />
         </div>
-        <div className="w-[368px] max-md:w-[328px]">
+        <div className="w-[368px] max-md:w-full">
           <label className="relative left-2 -bottom-[11px] p-1 bg-secondary-bg text-secondary-text text-caption font-regular">
             Фамилия
           </label>
@@ -98,7 +98,7 @@ export default function PersonalInfo() {
             )}
           />
         </div>
-        <div className="w-[368px] max-md:w-[328px]">
+        <div className="w-[368px] max-md:w-full">
           <label className="relative left-2 -bottom-[11px] p-1 bg-secondary-bg text-secondary-text text-caption font-regular">
             Дата рождения
           </label>
@@ -115,7 +115,7 @@ export default function PersonalInfo() {
             )}
           />
         </div>
-        <div className="w-[368px] max-md:w-[328px]">
+        <div className="w-[368px] max-md:w-full">
           <label className="relative left-2 -bottom-[11px] p-1 bg-secondary-bg text-secondary-text text-caption font-regular">
             Дата трудоустройства
           </label>
@@ -132,7 +132,7 @@ export default function PersonalInfo() {
             )}
           />
         </div>
-        <div className="w-[368px] max-md:w-[328px]">
+        <div className="w-[368px] max-md:w-full">
           <label className="relative left-2 -bottom-[11px] p-1 bg-secondary-bg text-secondary-text text-caption font-regular">
             Страна
           </label>
@@ -149,7 +149,7 @@ export default function PersonalInfo() {
             )}
           />
         </div>
-        <div className="w-[368px] max-md:w-[328px]">
+        <div className="w-[368px] max-md:w-full">
           <label className="relative left-2 -bottom-[11px] p-1 bg-secondary-bg text-secondary-text text-caption font-regular">
             Город
           </label>
@@ -166,7 +166,7 @@ export default function PersonalInfo() {
             )}
           />
         </div>
-        <div className="w-[368px] max-md:w-[328px]">
+        <div className="w-[368px] max-md:w-full">
           <label className="relative left-2 -bottom-[11px] p-1 bg-secondary-bg text-secondary-text text-caption font-regular">
             Должность
           </label>
@@ -183,7 +183,7 @@ export default function PersonalInfo() {
             )}
           />
         </div>
-        <div className="w-[368px] max-md:w-[328px]">
+        <div className="w-[368px] max-md:w-full">
           <label className="relative left-2 -bottom-[11px] p-1 bg-secondary-bg text-secondary-text text-caption font-regular">
             Электронная почта
           </label>

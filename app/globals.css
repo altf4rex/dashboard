@@ -4,3 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    letter-spacing: 0.5px; 
+}

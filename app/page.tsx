@@ -12,7 +12,7 @@ export default function Home() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <div className="container mx-auto min-h-screen  text-primary-text font-sans">
+    <div className="container mx-auto min-h-screen pb-20 text-primary-text font-sans">
       <header className="py-6 flex items-center justify-between max-sm:px-4">
         <Image src="/Logo.svg" alt="Logo" width={180} height={40} />
         <div className="flex items-center">
@@ -82,7 +82,7 @@ export default function Home() {
         </p>
       </button>
       <main className="">
-        <div className="px-10 pt-10 pb-10 mb-5 rounded-xl bg-secondary-bg  max-sm:px-5">
+        <div className="px-10 pt-10 pb-10 mb-5 rounded-xl bg-secondary-bg  max-sm:px-5 max-md:mb-4">
           <div className="flex flex-wrap max-md:justify-center max-md:items-center">
             <Image
               src={user.avatar}
