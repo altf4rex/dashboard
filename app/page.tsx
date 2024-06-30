@@ -5,70 +5,16 @@ import VacationInfo from "../components/VacationInfo/VacationInfo";
 import { useUser } from "../context/UserContext";
 import Image from "next/image";
 import EmployeeLoad from "../components/EmployeeLoad/EmployeeLoad";
+import Header from "@/components/Header";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("personalInfo");
   const { user } = useUser();
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
 
   return (
     <div className="container mx-auto min-h-screen pb-20 text-primary-text font-sans">
-      <header className="py-6 flex items-center justify-between max-sm:px-4">
-        <Image src="/Logo.svg" alt="Logo" width={180} height={40} />
-        <div className="flex items-center">
-          <div className="relative">
-            <button
-              onClick={() => setDropdownOpen(!isDropdownOpen)}
-              className="flex items-center border border-primary-border rounded-[18px] px-4 py-[6px]"
-            >
-              <Image
-                src={user.avatar}
-                width={24}
-                height={24}
-                alt="avatar"
-                className="w-6 h-6 rounded-full"
-              />
-              <Image
-                src="/chevron-down.svg"
-                alt="arrow"
-                width={24}
-                height={24}
-              />
-            </button>
-            {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-48 bg-secondary-bg rounded-lg shadow-lg">
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-primary-text hover:bg-tertiary-bg"
-                >
-                  Profile
-                </a>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-primary-text hover:bg-tertiary-bg"
-                >
-                  Settings
-                </a>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-primary-text hover:bg-tertiary-bg"
-                >
-                  Logout
-                </a>
-              </div>
-            )}
-          </div>
-          <button className="ml-2">
-            <Image
-              className="ml-2"
-              src="/burger.svg"
-              alt="burger"
-              width={24}
-              height={24}
-            />
-          </button>
-        </div>
-      </header>
+      <Header />
       <button className="flex justify-center items-center my-4 px-4 py-[10px]">
         <Image
           className="mr-4"

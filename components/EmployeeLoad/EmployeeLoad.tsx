@@ -105,18 +105,15 @@ export default function EmployeeLoad() {
       </div>
       {isModalOpen && (
         <Modal onClose={() => setModalOpen(false)}>
-          <h4 className="text-h4 font-regular text-primary-text mb-4">
-            Команда
-          </h4>
-          <ul>
+          <ul className="mt-10">
             {user.team.map((member, index) => (
-              <li key={index} className="flex items-center mb-2">
+              <li key={index} className="flex items-center mb-4">
                 <Image
                   width={48}
                   height={48}
                   src={member.avatar}
                   alt={member.name}
-                  className="w-8 h-8 rounded-full mr-2"
+                  className="w-12 h-12 rounded-full mr-2"
                 />
                 <div>
                   <p className="text-body1 font-regular text-primary-text">
