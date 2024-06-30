@@ -15,19 +15,28 @@ export default function Home() {
   return (
     <div className="container mx-auto min-h-screen pb-20 text-primary-text font-sans">
       <Header />
-      <button className="flex justify-center items-center my-4 px-4 py-[10px]">
-        <Image
-          className="mr-4"
-          src="/chevron-left.svg"
-          alt="burger"
-          width={24}
-          height={24}
-        />
-        <p className="text-button font-semiBold text-tertiary-text uppercase">
+      <button className="flex justify-center items-center my-4 px-4 py-[10px] group">
+      <svg
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  className="mb-[1px] mr-2 text-tertiary-text group-hover:text-secondary-text"
+>
+  <path
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M15.7071 5.29289C16.0976 5.68342 16.0976 6.31658 15.7071 6.70711L10.4142 12L15.7071 17.2929C16.0976 17.6834 16.0976 18.3166 15.7071 18.7071C15.3166 19.0976 14.6834 19.0976 14.2929 18.7071L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929L14.2929 5.29289C14.6834 4.90237 15.3166 4.90237 15.7071 5.29289Z"
+    fill="currentColor"
+  />
+</svg>
+
+        <p className="text-button font-semiBold text-tertiary-text uppercase group-hover:text-secondary-text">
           Вернуться к сотрудникам
         </p>
       </button>
-      <main>
+      <main className="max-lg:flex max-lg:flex-col max-lg:justify-center max-lg:items-center">
         <div className="px-10 pt-10 pb-10 mb-5 rounded-xl bg-secondary-bg  max-sm:px-4 max-sd:mb-4 max-sm:pt-8 max-sm:pb-8" >
           <div className="flex flex-wrap max-md:justify-center max-md:items-center">
             <Image
@@ -50,30 +59,31 @@ export default function Home() {
             </div>
           </div>
           <div className="max-w-fit mt-6 flex flex-nowrap border-b border-primary-border max-md:justify-center">
-            <button
-              onClick={() => setActiveTab("personalInfo")}
-              className={`px-4 py-[10px] text-body2 font-semibold uppercase ${
-                activeTab === "personalInfo"
-                  ? "text-primary-text border-b-2 border-accent-border"
-                  : "text-secondary-text"
-              }`}
-            >
-              Основная информация
-            </button>
-            <button
-              onClick={() => setActiveTab("vacationInfo")}
-              className={`px-4 py-[10px] text-body2 font-semibold uppercase ${
-                activeTab === "vacationInfo"
-                  ? "text-primary-text border-b-2 border-accent-border"
-                  : "text-secondary-text"
-              }`}
-            >
-              Отпуск
-            </button>
+          <button
+  onClick={() => setActiveTab("personalInfo")}
+  className={`px-4 py-[10px] text-body2 font-semibold uppercase max-sm:px-3 border-b-2 transition-all duration-200 ${
+    activeTab === "personalInfo"
+      ? "text-primary-text border-accent-border"
+      : "text-secondary-text border-transparent hover:text-primary-text"
+  }`}
+>
+  Основная информация
+</button>
+<button
+  onClick={() => setActiveTab("vacationInfo")}
+  className={`px-4 py-[10px] text-body2 font-semibold uppercase max-sm:px-3 border-b-2 transition-all duration-200 ${
+    activeTab === "vacationInfo"
+      ? "text-primary-text border-accent-border"
+      : "text-secondary-text border-transparent hover:text-primary-text"
+  }`}
+>
+  Отпуск
+</button>
+
           </div>
         </div>
         {activeTab === "personalInfo" ? (
-          <div className="flex justify-between max-lg:flex-wrap">
+          <div className="flex justify-between max-lg:flex-wrap max-lg:flex-col max-lg:justify-center max-lg:items-center">
             <PersonalInfo />
             <EmployeeLoad />
           </div>

@@ -11,16 +11,16 @@ export default function EmployeeLoad() {
   const remainingTeamCount = user.team.length - teamToShow.length;
 
   return (
-    <div className="max-w-[658px] h-fit p-[30px] rounded-xl bg-secondary-bg max-md:mt-4 max-sm:px-4">
+    <div className="max-w-[658px] h-fit p-[30px] rounded-xl bg-secondary-bg max-lg:mt-5 max-md:mt-4 max-sm:px-4">
       <div className="mb-10 flex justify-between items-center">
-        <h5 className="text-h5 font-regular text-primary-text">
+        <h5 className="text-h5 font-regular text-primary-text max-md:text-body1 max-md:font-medium">
           Загрузка сотрудника
         </h5>
         <div className="text-body2 font-semibold text-[#D77556]">100%</div>
       </div>
       <div className="flex flex-col gap-y-10 max-md:gap-y-4">
         <div className="flex max-md:flex-wrap">
-          <div className="mr-[124px]">
+          <div className="mr-[118px]">
             <p className="mb-2 text-body1 text-tertiary-text font-regular">
               Название проекта
             </p>
@@ -99,7 +99,7 @@ export default function EmployeeLoad() {
         </div>
       </div>
       <div className="mt-10 text-center">
-        <button className="w-full py-[10px] uppercase text-primary-text text-body2 font-semibold bg-accent-bg rounded-[4px]">
+        <button className="w-full py-[10px] uppercase text-primary-text text-body2 font-semibold bg-accent-bg rounded-[4px] hover:bg-state-blueHover">
           Посмотреть всю загрузку
         </button>
       </div>

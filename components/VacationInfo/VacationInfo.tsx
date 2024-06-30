@@ -1,9 +1,8 @@
 
 export default function VacationInfo(){
   return (
-    <div className="mt-6 bg-secondary-bg p-4 rounded-lg">
-      <h4 className="text-h4 font-regular text-primary-text mb-4">Информация об отпуске</h4>
-      <p className="text-body1 font-regular text-secondary-text"></p>
+    <div className="p-4 rounded-lg rounded-xl bg-secondary-bg ">
+        <h4 className="py-[194px] text-h5 font-regular text-center">Информация об отпуске</h4>
     </div>
   );
 }

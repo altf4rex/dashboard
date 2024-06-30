@@ -32,7 +32,7 @@ export default function PersonalInfo() {
   return (
     <div className="p-[30px] max-w-[820px] h-fit bg-secondary-bg rounded-xl max-sm:px-4">
       <div className="flex justify-between items-center">
-        <h5 className="text-h5 font-regular">Персональная информация</h5>
+        <h5 className="text-h5 font-regular max-md:text-body1 max-md:font-medium">Персональная информация</h5>
         <button
           onClick={() => setIsEditing(!isEditing)}
           className="text-accent text-button"
@@ -46,13 +46,13 @@ export default function PersonalInfo() {
             height={24}
           />
           ) : (
-            <p className="text-subtitle2 text-tertiary-text font-medium">Изменить</p>
+            <p className="text-subtitle2 text-tertiary-text font-medium hover:text-secondary-text">Изменить</p>
           )}
         </button>
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="grid grid-cols-1 md:grid-cols-2 mt-[18px] gap-x-6"
+        className="grid grid-cols-2 mt-[18px] gap-x-6 max-md:grid-cols-1"
       >
         {fields.map((field) => (
           <InputField
@@ -68,7 +68,7 @@ export default function PersonalInfo() {
           <div className="col-span-1 md:col-span-2 mt-8">
             <button
               type="submit"
-              className="w-full py-[10px] uppercase text-primary-text text-body2 font-semibold bg-accent-bg rounded-[4px]"
+              className="w-full py-[10px] uppercase text-primary-text text-body2 font-semibold bg-accent-bg rounded-[4px] hover:bg-state-blueHover"
             >
               Сохранить
             </button>
