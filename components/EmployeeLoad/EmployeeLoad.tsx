@@ -11,7 +11,7 @@ export default function EmployeeLoad() {
   const remainingTeamCount = user.team.length - teamToShow.length;
 
   return (
-    <div className="max-w-[658px] h-fit p-[30px] rounded-xl bg-secondary-bg max-md:mt-4">
+    <div className="max-w-[658px] h-fit p-[30px] rounded-xl bg-secondary-bg max-md:mt-4 max-sm:px-4">
       <div className="mb-10 flex justify-between items-center">
         <h5 className="text-h5 font-regular text-primary-text">
           Загрузка сотрудника
@@ -38,7 +38,7 @@ export default function EmployeeLoad() {
           </div>
         </div>
         <div className="flex flex-wrap">
-          <div className="mr-[78px]">
+          <div className="mr-[78px] max-sm:mr-0">
             <p className="mb-2 text-body1 text-tertiary-text font-regular">
               Ответственный
             </p>
@@ -55,7 +55,7 @@ export default function EmployeeLoad() {
               </p>
             </div>
           </div>
-          <div className="mr-[44px] max-md:mt-4">
+          <div className="mr-[44px] max-md:mt-4 max-sm:mr-0">
             <p className="mb-2 text-body1 text-tertiary-text font-regular">
               Команда
             </p>

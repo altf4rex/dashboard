@@ -30,7 +30,7 @@ export default function PersonalInfo() {
   ];
 
   return (
-    <div className="p-[30px] max-w-[820px] h-fit bg-secondary-bg rounded-xl">
+    <div className="p-[30px] max-w-[820px] h-fit bg-secondary-bg rounded-xl max-sm:px-4">
       <div className="flex justify-between items-center">
         <h5 className="text-h5 font-regular">Персональная информация</h5>
         <button

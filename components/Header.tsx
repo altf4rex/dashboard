@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <header className="py-6 flex items-center justify-between max-sm:px-4">
-      <Image src="/Logo.svg" alt="Logo" width={180} height={40} />
+      <Image src="/Logo.svg" alt="Logo" width={180} height={40} className='w-[180px] h-[40px] max-sm:w-[135px] max-sm:h-[30px]'/>
       <div className="flex items-center">
         <div className="relative" ref={dropdownRef}>
           <button

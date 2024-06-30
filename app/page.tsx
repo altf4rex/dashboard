@@ -27,8 +27,8 @@ export default function Home() {
           Вернуться к сотрудникам
         </p>
       </button>
-      <main className="">
-        <div className="px-10 pt-10 pb-10 mb-5 rounded-xl bg-secondary-bg  max-sm:px-5 max-md:mb-4">
+      <main>
+        <div className="px-10 pt-10 pb-10 mb-5 rounded-xl bg-secondary-bg  max-sm:px-4 max-sd:mb-4 max-sm:pt-8 max-sm:pb-8" >
           <div className="flex flex-wrap max-md:justify-center max-md:items-center">
             <Image
               src={user.avatar}
